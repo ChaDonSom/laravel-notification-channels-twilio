@@ -14,7 +14,7 @@ class TwilioContentTemplateMessage extends TwilioSmsMessage
      * The variables to replace in the content template
      * @var null|array|string
      */
-    public $contentVariables;
+    public ?string $contentVariables;
 
     /**
      * Set the content sid (starting with H).
@@ -35,7 +35,7 @@ class TwilioContentTemplateMessage extends TwilioSmsMessage
      * @param  array $contentVariables The variables to replace in the content template (i.e. ['1' => 'John Doe'])
      * @return $this
      */
-    public function contentVariables(array $contentVariables): self
+    public function setContentVariables(array $contentVariables): self
     {
         $this->contentVariables = json_encode($contentVariables);
 
